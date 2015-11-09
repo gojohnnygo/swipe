@@ -1,0 +1,13 @@
+{
+  "name": "breakdown-swipe",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "swing": "~3.0.2",
+    "Framework7": "framework7#~1.3.5"
+  },
+  "devDependencies": {
+    "chai": "~3.4.1",
+    "mocha": "~2.3.3"
+  }
+}
