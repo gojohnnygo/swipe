@@ -26,6 +26,9 @@ $( document ).ready(function() {
         targetElement.classList.add('in-deck');
     });
 
+    var correct = 0;
+    var incorrect = 0;
+
     stack.on('throwout', function (e) {
         console.log(e.target.innerText || e.target.textContent, 'has been thrown out of the stack to the', e.throwDirection === 1 ? 'right' : 'left', 'direction.');
 
@@ -36,19 +39,26 @@ $( document ).ready(function() {
             var defenseCount = $('#defense-count').html();
             defenseCount = parseInt(defenseCount) + 1;
             $('#defense-count').html(defenseCount);
+            e.target.dataset.odk === 'd' ? correct++ : incorrect++;
             break;
           case 'LEFT':
             var offenseCount = $('#offense-count').html();
             offenseCount = parseInt(offenseCount) + 1;
             $('#offense-count').html(offenseCount);
+            e.target.dataset.odk === 'o' ? correct++ : incorrect++;
             break;
           case 'DOWN':
             var kickingCount = $('#kicking-count').html();
             kickingCount = parseInt(kickingCount) + 1;
             $('#kicking-count').html(kickingCount);
+            e.target.dataset.odk === 'k' ? correct++ : incorrect++;
             break;
           default:
             console.log('Unrecognized throw direction');
+        }
+
+        if ((correct + incorrect) === 15) {
+            alert(correct + " out of 15 correct!");
         }
     });
 
