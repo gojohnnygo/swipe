@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
     <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/button.css">
     <!-- endbuild -->
     
   </head>
@@ -71,44 +71,37 @@
             <div class="page-content">
 
               <div id="viewport">
-                <div id="instructions">
-                  <p>Swipe the cards to tag each play.</p>
-                  
-                  <div class="swipe-left-right">
-                    Offense<i class="fa fa-long-arrow-left fa-3x"></i>
-                    <i class="fa fa-long-arrow-right fa-3x"></i>Defense
-                  </div>
-                  <div class="swipe-up-down">
-                    <i class="fa fa-long-arrow-down fa-3x"></i>
-                    <div>Kicking</div>
-                  </div>
-                </div>
-                
-                  <ul class="stack">
-                    <li data-odk="d"><div></div><img src="images/15-D11.png"></li>
-                    <li data-odk="d"><div></div><img src="images/14-D10.png"></li>
-                    <li data-odk="d"><div></div><img src="images/13-D9.png"></li>
-                    <li data-odk="d"><div></div><img src="images/12-D8.png"></li>
-                    <li data-odk="k"><div></div><img src="images/11-K1.png"></li>
-                    <li data-odk="o"><div></div><img src="images/10-O3.png"></li>
-                    <li data-odk="o"><div></div><img src="images/09-O2.png"></li>
-                    <li data-odk="o"><div></div><img src="images/08-O1.png"></li>
-                    <li data-odk="d"><div></div><img src="images/07-D7.png"></li>
-                    <li data-odk="d"><div></div><img src="images/06-D6.png"></li>
-                    <li data-odk="d"><div></div><img src="images/05-D5.png"></li>
-                    <li data-odk="d"><div></div><img src="images/04-D4.png"></li>
-                    <li data-odk="d"><div></div><img src="images/03-D3.png"></li>
-                    <li data-odk="d"><div></div><img src="images/02-D2.png"></li>
-                    <li data-odk="d"><div></div><img src="images/01-D1.png"></li>
-                    <!-- <li class="clubs">♣</li>
-                    <li class="diamonds">♦</li>
-                    <li class="hearts">♥</li>
-                    <li class="spades">♠</li> -->
-                  </ul>
-                
+              <div id="instructions">
+               <p>Tag each play using the buttons below.</p>
               </div>
               
-              
+              <ul class="stack">
+                <li data-odk="d"><div></div><img src="images/15-D11.png"></li>
+                <li data-odk="d"><div></div><img src="images/14-D10.png"></li>
+                <li data-odk="d"><div></div><img src="images/13-D9.png"></li>
+                <li data-odk="d"><div></div><img src="images/12-D8.png"></li>
+                <li data-odk="k"><div></div><img src="images/11-K1.png"></li>
+                <li data-odk="o"><div></div><img src="images/10-O3.png"></li>
+                <li data-odk="o"><div></div><img src="images/09-O2.png"></li>
+                <li data-odk="o"><div></div><img src="images/08-O1.png"></li>
+                <li data-odk="d"><div></div><img src="images/07-D7.png"></li>
+                <li data-odk="d"><div></div><img src="images/06-D6.png"></li>
+                <li data-odk="d"><div></div><img src="images/05-D5.png"></li>
+                <li data-odk="d"><div></div><img src="images/04-D4.png"></li>
+                <li data-odk="d"><div></div><img src="images/03-D3.png"></li>
+                <li data-odk="d"><div></div><img src="images/02-D2.png"></li>
+                <li data-odk="d"><div></div><img src="images/01-D1.png"></li>
+                <!-- <li class="clubs">♣</li>
+                <li class="diamonds">♦</li>
+                <li class="hearts">♥</li>
+                <li class="spades">♠</li> -->
+              </ul>
+              <div id="stack-cover"></div>
+              <div class="btn-group">
+                <div data-odk="o" class="btn offense"><span>Offense</span></div>
+                <div data-odk="d" class="btn defense"><span>Defense</span></div>
+                <div data-odk="k" class="btn kicking"><span>Kicking</span></div>
+              </div>
               
               <!-- Link to another page 
               <a href="about.html">About app</a> -->
@@ -116,18 +109,18 @@
           </div>
         </div>
         <!-- Bottom Toolbar-->
-        <div class="toolbar">
-          <div class="toolbar-inner">
+        <!-- <div class="toolbar">
+          <div class="toolbar-inner"> -->
             <!-- Toolbar links -->
             <!-- <a href="#" class="link">Link 1</a>
             <a href="#" class="link">Link 2</a> -->
             <!-- <span> -->
-              <span class="count">Offense: <span id="offense-count">0</span></span>
+              <!-- <span class="count">Offense: <span id="offense-count">0</span></span>
               <span class="count">Kicking: <span id="kicking-count">0</span></span>
-              <span class="count">Defense: <span id="defense-count">0</span></span>
+              <span class="count">Defense: <span id="defense-count">0</span></span> -->
             <!-- </span> -->
-          </div>
-        </div>
+        <!--   </div>
+        </div> -->
       </div>
     </div>
     
@@ -150,7 +143,7 @@
     <!-- endbuild -->
     
     <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
+    <script src="scripts/button.js"></script>
     <!-- endbuild -->
   </body>
 </html>
