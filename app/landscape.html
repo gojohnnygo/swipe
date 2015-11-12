@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>breakdown swipe</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" href="/bower_components/Framework7/dist/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="/bower_components/Framework7/dist/css/framework7.ios.colors.min.css">
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- build:css styles/landscape.css -->
+    <link rel="stylesheet" href="styles/landscape.css">
+    <!-- endbuild -->
+    
+  </head>
+  <body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+    <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+    <!-- Panels overlay-->
+    <div class="panel-overlay"></div>
+    <!-- Left panel with reveal effect-->
+    <div class="panel panel-left panel-reveal">
+      <div class="content-block">
+        <p>Left panel content goes here</p>
+      </div>
+    </div>
+    <!-- Views -->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="#" class="link">Cancel</a>
+            </div>
+            <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+            <div class="center sliding">ODK Swipe</div>
+            
+            <div class="right">
+              <!-- 
+                Right link contains only icon - additional "icon-only" class
+                Additional "open-panel" class tells app to open panel when we click on this link
+              
+              <a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a>-->
+              <a href="#" class="link">Done</a>
+            </div>
+          </div>
+        </div>
+        <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, "data-page" contains page name -->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content -->
+            
+            <div class="page-content">
+
+              <div id="viewport">
+                <ul class="stack">
+                  <li data-odk="d"><div></div><img src="images/15-D11.png"></li>
+                  <li data-odk="d"><div></div><img src="images/14-D10.png"></li>
+                  <li data-odk="d"><div></div><img src="images/13-D9.png"></li>
+                  <li data-odk="d"><div></div><img src="images/12-D8.png"></li>
+                  <li data-odk="k"><div></div><img src="images/11-K1.png"></li>
+                  <li data-odk="o"><div></div><img src="images/10-O3.png"></li>
+                  <li data-odk="o"><div></div><img src="images/09-O2.png"></li>
+                  <li data-odk="o"><div></div><img src="images/08-O1.png"></li>
+                  <li data-odk="d"><div></div><img src="images/07-D7.png"></li>
+                  <li data-odk="d"><div></div><img src="images/06-D6.png"></li>
+                  <li data-odk="d"><div></div><img src="images/05-D5.png"></li>
+                  <li data-odk="d"><div></div><img src="images/04-D4.png"></li>
+                  <li data-odk="d"><div></div><img src="images/03-D3.png"></li>
+                  <li data-odk="d"><div></div><img src="images/02-D2.png"></li>
+                  <li data-odk="d"><div></div><img src="images/01-D1.png"></li>
+                  <!-- <li class="clubs">♣</li>
+                  <li class="diamonds">♦</li>
+                  <li class="hearts">♥</li>
+                  <li class="spades">♠</li> -->
+                  <div id="stack-cover"></div>
+                </ul>
+                <div id="instructions">
+                  
+                  <div class="btn-group">
+                  <p>Tag each play using the buttons below.</p>
+                  <div data-odk="o" class="btn offense"><span>Offense</span></div>
+                  <div data-odk="d" class="btn defense"><span>Defense</span></div>
+                  <div data-odk="k" class="btn kicking"><span>Kicking</span></div>
+                </div>
+                </div>
+                
+              </div>
+              <!-- Link to another page 
+              <a href="about.html">About app</a> -->
+            </div>
+          </div>
+        </div>
+        <!-- Bottom Toolbar-->
+        <!-- <div class="toolbar">
+          <div class="toolbar-inner"> -->
+            <!-- Toolbar links -->
+            <!-- <a href="#" class="link">Link 1</a>
+            <a href="#" class="link">Link 2</a> -->
+            <!-- <span> -->
+              <!-- <span class="count">Offense: <span id="offense-count">0</span></span>
+              <span class="count">Kicking: <span id="kicking-count">0</span></span>
+              <span class="count">Defense: <span id="defense-count">0</span></span> -->
+            <!-- </span> -->
+        <!--   </div>
+        </div> -->
+      </div>
+    </div>
+    
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/swing/dist/browser/swing.js"></script>
+    <script src="/bower_components/Framework7/dist/js/framework7.min.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/button.js -->
+    <script src="scripts/button.js"></script>
+    <!-- endbuild -->
+  </body>
+</html>
