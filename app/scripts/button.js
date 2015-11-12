@@ -51,7 +51,7 @@ $( document ).ready(function() {
 
     var animate = function() {
         var card = cards[count];
-        $(card).animate({top: "+=1000"}, 1500)
+        $(card).animate({top: "+=1000"}, 1750)
         if ((correct + incorrect) === 15) {
             alert(correct + " out of 15 correct!");
         }
