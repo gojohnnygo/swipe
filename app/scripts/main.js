@@ -44,19 +44,19 @@ $( document ).ready(function() {
         switch(e.throwDirection) {
             case 'RIGHT':
                 odk.style.opacity = e.x * .009;
-                odk.textContent = "Defense";                
+                odk.textContent = "D";                
                 break;
             case 'LEFT':
                 odk.style.opacity = e.x * -.009;
-                odk.textContent = "Offense";
+                odk.textContent = "O";
                 break;
             case 'UP':
                 odk.style.opacity = e.y * -.009;
-                odk.textContent = "Scoreboard";
+                odk.textContent = "S";
                 break;
             case 'DOWN':
                 odk.style.opacity = e.y * .009;
-                odk.textContent = "Kicking";
+                odk.textContent = "K";
                 break;
             default:
         }
