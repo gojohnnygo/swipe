@@ -29,6 +29,39 @@ $( document ).ready(function() {
     var correct = 0;
     var incorrect = 0;
 
+    stack.on('dragend', function(e) {
+        var odk = e.target.getElementsByClassName('odk')[0];
+
+        if (e.throwOutConfidence < 1) {
+            odk.style.opacity = 0;
+            odk.textContent = "";
+        }
+    });
+
+    stack.on('dragmove', function(e) {
+        var odk = e.target.getElementsByClassName('odk')[0];
+        
+        switch(e.throwDirection) {
+            case 'RIGHT':
+                odk.style.opacity = e.x * .009;
+                odk.textContent = "Defense";                
+                break;
+            case 'LEFT':
+                odk.style.opacity = e.x * -.009;
+                odk.textContent = "Offense";
+                break;
+            case 'UP':
+                odk.style.opacity = e.y * -.009;
+                odk.textContent = "Scoreboard";
+                break;
+            case 'DOWN':
+                odk.style.opacity = e.y * .009;
+                odk.textContent = "Kicking";
+                break;
+            default:
+        }
+    });
+
     stack.on('throwout', function (e) {
         console.log(e.target.innerText || e.target.textContent, 'has been thrown out of the stack to the', e.throwDirection === 1 ? 'right' : 'left', 'direction.');
 
