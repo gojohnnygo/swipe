@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="/bower_components/Framework7/dist/css/framework7.ios.min.css">
     <link rel="stylesheet" href="/bower_components/Framework7/dist/css/framework7.ios.colors.min.css">
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/animate.css/animate.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -30,6 +31,7 @@
     <![endif]-->
     
     <!-- Status bar overlay for full screen mode (PhoneGap) -->
+
     <div class="statusbar-overlay"></div>
     <!-- Panels overlay-->
     <div class="panel-overlay"></div>
@@ -50,7 +52,7 @@
               <a href="#" class="link">Cancel</a>
             </div>
             <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
-            <div class="center sliding">ODK Swipe</div>
+            <div class="center sliding bounce">ODK Swipe</div>
             
             <div class="right">
               <!-- 
@@ -63,6 +65,7 @@
           </div>
         </div>
         <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+        
         <div class="pages navbar-through toolbar-through">
           <!-- Page, "data-page" contains page name -->
           <div data-page="index" class="page">
@@ -70,20 +73,33 @@
             
             <div class="page-content">
 
-              <div id="viewport">
-                <div id="instructions">
-                   <p>Tag by swiping the play cards.</p>
-                  
-                  <!--<div class="swipe-left-right">
-                    Offense<i class="fa fa-long-arrow-left fa-3x"></i>
-                    <i class="fa fa-long-arrow-right fa-3x"></i>Defense
+              <div class="viewport">
+                <div id = "tutorial">
+                  <div class="instructions">
+                     <p class="animated infinite pulse">This play is defense. Let's it swipe right.</p>
                   </div>
-                  <div class="swipe-up-down">
-                    <i class="fa fa-long-arrow-down fa-3x"></i>
-                    <div>Kicking</div>
-                  </div> -->
+                  
+                  <ul class="stack">
+                    <li data-odk="s"><div class="odk"></div><img src="images/04-D4.png"></li>
+                    <li data-odk="k"><div class="odk"></div><img src="images/03-D3.png"></li>
+                    <li data-odk="o"><div class="odk"></div><img src="images/02-D2.png"></li>
+                    <li data-odk="d"><div class="odk"></div><img src="images/01-D1.png"></li>
+                  </ul>
                 </div>
-                
+                <div id="not-tutorial" class="">
+                  <div class="instructions">
+                     <p>Tag by swiping the play cards.</p>
+                    
+                    <!--<div class="swipe-left-right">
+                      Offense<i class="fa fa-long-arrow-left fa-3x"></i>
+                      <i class="fa fa-long-arrow-right fa-3x"></i>Defense
+                    </div>
+                    <div class="swipe-up-down">
+                      <i class="fa fa-long-arrow-down fa-3x"></i>
+                      <div>Kicking</div>
+                    </div> -->
+                  </div>
+                  
                   <ul class="stack">
                     <li data-odk="d"><div class="odk"></div><img src="images/15-D11.png"></li>
                     <li data-odk="d"><div class="odk"></div><img src="images/14-D10.png"></li>
@@ -105,7 +121,7 @@
                     <li class="hearts">♥</li>
                     <li class="spades">♠</li> -->
                   </ul>
-                
+                </div>
               </div>
               
               
