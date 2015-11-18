@@ -70,6 +70,35 @@
 
             e.target.classList.remove('in-deck');
 
+            switch (e.throwDirection) {
+                case 'RIGHT':
+                    var defenseCount = $('#defense-count').html();
+                    defenseCount = parseInt(defenseCount) + 1;
+                    $('#defense-count').html(defenseCount);
+                    e.target.dataset.odk === 'd' ? correct++ : incorrect++;
+                    break;
+                case 'LEFT':
+                    var offenseCount = $('#offense-count').html();
+                    offenseCount = parseInt(offenseCount) + 1;
+                    $('#offense-count').html(offenseCount);
+                    e.target.dataset.odk === 'o' ? correct++ : incorrect++;
+                    break;
+                case 'DOWN':
+                    var kickingCount = $('#kicking-count').html();
+                    kickingCount = parseInt(kickingCount) + 1;
+                    $('#kicking-count').html(kickingCount);
+                    e.target.dataset.odk === 'k' ? correct++ : incorrect++;
+                    break;
+               case 'UP':
+                    // var kickingCount = $('#kicking-count').html();
+                    // kickingCount = parseInt(kickingCount) + 1;
+                    // $('#kicking-count').html(kickingCount);
+                    // e.target.dataset.odk === 'k' ? correct++ : incorrect++;
+                    break;
+                default:
+                    console.log('Unrecognized throw direction');
+            }
+
             switch (isTutorial) {
                 case 1:
                     if (e.throwDirection === 'RIGHT') {
@@ -111,11 +140,14 @@
                     } else {
                         alert("Opps! That's not the correct direction, but you probably have the hang of it. Let's swipe for reals.");
                     }
-                    $("#tutorial p").removeClass('infinite pulse');
+                    
+                    //$("#tutorial p").removeClass('infinite pulse');
                     $("#tutorial").addClass('hide');
 
-                    //$("#not-tutorial").removeClass('hide');
-                    // $("#not-tutorial").addClass('animated bounceInDown');
+                    
+                    //$("#not-tutorial").addClass('animated bounceInDown');
+                    $("#not-tutorial").removeClass('hide');
+                    
                     
                     correct = 0;
                     incorrect = 0;
@@ -128,37 +160,9 @@
                     break;
             }
 
-            switch (e.throwDirection) {
-                case 'RIGHT':
-                    var defenseCount = $('#defense-count').html();
-                    defenseCount = parseInt(defenseCount) + 1;
-                    $('#defense-count').html(defenseCount);
-                    e.target.dataset.odk === 'd' ? correct++ : incorrect++;
-                    break;
-                case 'LEFT':
-                    var offenseCount = $('#offense-count').html();
-                    offenseCount = parseInt(offenseCount) + 1;
-                    $('#offense-count').html(offenseCount);
-                    e.target.dataset.odk === 'o' ? correct++ : incorrect++;
-                    break;
-                case 'DOWN':
-                    var kickingCount = $('#kicking-count').html();
-                    kickingCount = parseInt(kickingCount) + 1;
-                    $('#kicking-count').html(kickingCount);
-                    e.target.dataset.odk === 'k' ? correct++ : incorrect++;
-                    break;
-               case 'UP':
-                    // var kickingCount = $('#kicking-count').html();
-                    // kickingCount = parseInt(kickingCount) + 1;
-                    // $('#kicking-count').html(kickingCount);
-                    // e.target.dataset.odk === 'k' ? correct++ : incorrect++;
-                    break;
-                default:
-                    console.log('Unrecognized throw direction');
-            }
 
-            if ((correct + incorrect) === 15) {
-                alert(correct + " out of 15 correct!");
+            if ((correct + incorrect) === 40) {
+                alert(correct + " out of 40 correct!");
             }
         });
 
