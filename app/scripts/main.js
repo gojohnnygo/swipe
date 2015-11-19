@@ -4,6 +4,7 @@
 
     $( document ).ready(function() {
         var isTutorial = 1;
+        var playGroup = 1;
 
         // Initialize app
         var myApp = new Framework7();
@@ -72,28 +73,28 @@
 
             switch (e.throwDirection) {
                 case 'RIGHT':
-                    var defenseCount = $('#defense-count').html();
-                    defenseCount = parseInt(defenseCount) + 1;
-                    $('#defense-count').html(defenseCount);
+                    // var defenseCount = $('#defense-count').html();
+                    // defenseCount = parseInt(defenseCount) + 1;
+                    // $('#defense-count').html(defenseCount);
                     e.target.dataset.odk === 'd' ? correct++ : incorrect++;
                     break;
                 case 'LEFT':
-                    var offenseCount = $('#offense-count').html();
-                    offenseCount = parseInt(offenseCount) + 1;
-                    $('#offense-count').html(offenseCount);
+                    // var offenseCount = $('#offense-count').html();
+                    // offenseCount = parseInt(offenseCount) + 1;
+                    // $('#offense-count').html(offenseCount);
                     e.target.dataset.odk === 'o' ? correct++ : incorrect++;
                     break;
                 case 'DOWN':
-                    var kickingCount = $('#kicking-count').html();
-                    kickingCount = parseInt(kickingCount) + 1;
-                    $('#kicking-count').html(kickingCount);
+                    // var kickingCount = $('#kicking-count').html();
+                    // kickingCount = parseInt(kickingCount) + 1;
+                    // $('#kicking-count').html(kickingCount);
                     e.target.dataset.odk === 'k' ? correct++ : incorrect++;
                     break;
                case 'UP':
                     // var kickingCount = $('#kicking-count').html();
                     // kickingCount = parseInt(kickingCount) + 1;
                     // $('#kicking-count').html(kickingCount);
-                    // e.target.dataset.odk === 'k' ? correct++ : incorrect++;
+                    e.target.dataset.odk === 'k' ? correct++ : incorrect++;
                     break;
                 default:
                     console.log('Unrecognized throw direction');
@@ -159,6 +160,10 @@
                     break;
             }
 
+            if ((correct + incorrect) % 5 === 0) {
+                $("#" + playGroup).removeClass('hide');
+                playGroup++; 
+            }
 
             if ((correct + incorrect) === 40) {
                 alert(correct + " out of 40 correct!");
@@ -171,6 +176,6 @@
             e.target.classList.add('in-deck');
         });
 
-        alert("Let’s take a quick tutorial before we start tagging.");
+        // alert("Let’s take a quick tutorial before we start tagging.");
     });
 })(window.jQuery, window.Framework7, window.gajus);
