@@ -46,19 +46,19 @@
             
             switch(e.throwDirection) {
                 case 'RIGHT':
-                    odk.style.opacity = e.x * .009;
+                    odk.style.opacity = e.x * .004;
                     odk.textContent = "D";                
                     break;
                 case 'LEFT':
-                    odk.style.opacity = e.x * -.009;
+                    odk.style.opacity = e.x * -.004;
                     odk.textContent = "O";
                     break;
                 case 'UP':
-                    odk.style.opacity = e.y * -.009;
+                    odk.style.opacity = e.y * -.004;
                     odk.textContent = "S";
                     break;
                 case 'DOWN':
-                    odk.style.opacity = e.y * .009;
+                    odk.style.opacity = e.y * .004;
                     odk.textContent = "K";
                     break;
                 default:
@@ -102,43 +102,42 @@
             switch (isTutorial) {
                 case 1:
                     if (e.throwDirection === 'RIGHT') {
-                        alert("You're getting the 'swipe' of it! Now let's try an offensive play.");
+                        // alert("Your team is on defense. Swipe right to tag.");
                     } else {
-                        alert("Opps! That's not the correct direction. Let's try an offensive play.");
+                        alert("Oops! That's not the correct direction. Let's try an offensive play.");
                     }
 
                     isTutorial++;
 
-                    $("#tutorial p").html("Now let's try offense. Swipe this play left.");
+                    $("#tutorial p").html("Now your team is on offense. Swipe left to tag.");
 
                     break;
                 case 2:
                     if (e.throwDirection === 'LEFT') {
-                        alert("Great job! Now let's try a kicking play.")
+                        // alert("Now your team is on offense. Swipe left to tag.")
                     } else {
-                        alert("Opps! That's not the correct direction. Maybe you'll get the hang of kicking plays.");
+                        alert("Oops! That's not the correct direction. Maybe you'll get the hang of kicking plays.");
                     }
 
                     isTutorial++;
-                    $("#tutorial p").html("For kicking plays, swipe down.");
+                    $("#tutorial p").html("Time to punt the ball. Swipe down to tag.");
                     break;
                 case 3:
                     if (e.throwDirection === 'DOWN') {
-                        alert("You're almost a pro. If you see a scoreboard, swipe up.")
+                        // alert("You're almost a pro. If you see a scoreboard, swipe up.")
                     } else {
-                        alert("Opps! That's not the correct direction. Let's try one more time");
+                        alert("Oops! That's not the correct direction. Let's try one more time");
                     }
 
                     isTutorial++;
 
-                    $("#tutorial p").html("For scoreboard or to skip, swipe up.");                
+                    $("#tutorial p").html("To skip or mark a scoreboard shot, </br> swipe up to tag.");
                     break;
                 case 4:
                     if (e.throwDirection === 'UP') {
-                        alert("You're all done! Now let's swipe for reals.");
-                        
+                        alert("Great job! Let’s get started.");
                     } else {
-                        alert("Opps! That's not the correct direction, but you probably have the hang of it. Let's swipe for reals.");
+                        alert("Oops! That's not the correct direction, but you probably have the hang of it. Let's swipe for reals.");
                     }
                     
                     //$("#tutorial p").removeClass('infinite pulse');
@@ -172,6 +171,6 @@
             e.target.classList.add('in-deck');
         });
 
-        alert("Let's do a quick tutorial before we tagging breakdown data.");
+        alert("Let’s take a quick tutorial before we start tagging.");
     });
 })(window.jQuery, window.Framework7, window.gajus);
