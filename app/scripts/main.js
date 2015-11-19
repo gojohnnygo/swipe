@@ -176,6 +176,6 @@
             e.target.classList.add('in-deck');
         });
 
-        // alert("Let’s take a quick tutorial before we start tagging.");
+        alert("Let’s take a quick tutorial before we start tagging.");
     });
 })(window.jQuery, window.Framework7, window.gajus);
