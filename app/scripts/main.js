@@ -94,7 +94,7 @@
                     // var kickingCount = $('#kicking-count').html();
                     // kickingCount = parseInt(kickingCount) + 1;
                     // $('#kicking-count').html(kickingCount);
-                    e.target.dataset.odk === 'k' ? correct++ : incorrect++;
+                    e.target.dataset.odk === 's' ? correct++ : incorrect++;
                     break;
                 default:
                     console.log('Unrecognized throw direction');
