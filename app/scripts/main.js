@@ -29,9 +29,9 @@
         stack = gajus.Swing.Stack();
 
         [].forEach.call(document.querySelectorAll('.stack li'), function (targetElement) {
-            // stack.createCard(targetElement);
+            stack.createCard(targetElement);
 
-            // targetElement.classList.add('in-deck');
+            targetElement.classList.add('in-deck');
         });
 
         var correct = 0;
