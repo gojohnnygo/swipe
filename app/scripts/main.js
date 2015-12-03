@@ -147,7 +147,7 @@
                     if (e.throwDirection === 'UP') {
                         alert("Great job! Let’s get started.");
                     } else {
-                        // alert("Oops! That's not the correct direction, but you probably have the hang of it. Let's swipe for reals.");
+                        alert("Oops! That's not the correct direction, but you probably have the hang of it. Let's swipe for reals.");
                     }
                     
                     //$("#tutorial p").removeClass('infinite pulse');
@@ -178,9 +178,9 @@
                 for (var i = starting; i <= end; i++) {
                     var file = "images/" + images[i];
                     var odk = images[i].split('-')[1][0].toLowerCase();
-                    var html = '<li class="in-deck" data-odk="' + odk + '"><div></div><img src="' + file + '"></li>';
+                    var html = '<li class="in-deck" data-odk="' + odk + '"><div class="tag horz-tabs right">D</div><div class="tag horz-tabs left">O</div><div class="tag vert-tabs down ">K</div><div class="tag vert-tabs up">S</div><div class="odk"></div><img src="' + file + '"></li>';
                     var node = $.parseHTML(html)[0];
-                    //stack.createCard(node);
+                    stack.createCard(node);
                     $("#full-game").prepend(node);
                 }
 
@@ -203,6 +203,6 @@
             e.target.classList.add('in-deck');
         });
 
-        //alert("Let’s take a quick tutorial before we start tagging.");
+        alert("Let’s take a quick tutorial before we start tagging.");
     });
 })(window.jQuery, window.Framework7, window.gajus);
