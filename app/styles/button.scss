@@ -100,7 +100,7 @@ input {
 #viewport .stack {
     /*width: 200px; height: 300px; background: #ED5D52; position: absolute; top: 100px; left: 50%; margin-left: -100px; border-radius: 10px;*/
     /*width: 320px; height: 200px; background: #ED5D52; position: absolute; top: 200px; left: 50%; margin-left: -160px; border-radius: 10px;*/
-    width: 100%; height: 200px; position: absolute; top: 60px; border-radius: 10px;
+    width: 100%; height: 200px; position: absolute; top: 15px; border-radius: 10px;
 }
 
 #viewport li {
@@ -187,25 +187,44 @@ img {
   bottom: 0px;
 
   div {
-    height: 65px;
+    display: inline-block;
+    
+    height: 95px;
     color: white; 
+    margin-top: 2px;
+    margin-right: 1px;
+    margin-left: 1px;
+    width: 49%;
   }
 
   span {
     vertical-align: middle;
-    line-height: 65px;
+    line-height: 95px;
   }
 
   .offense {
-    background: #4B5C6A;
+    background: #DF4953;
   }
 
   .defense {
-    background: #404E5B;
+    background: #3985BE;
+    
   }
 
   .kicking {
-    background: #37434E;
+    background: #42BE39;
+    
+  }
+
+  .score {
+    background: #BDBDBD;
+    
+  }
+
+  .undo {
+    margin-top: 2px;
+    width: 98.5%;
+    background: #4D5D6B;
   }
 }
 
@@ -217,4 +236,31 @@ img {
   height: 100%;
   width: 100%;
   position: absolute;
+}
+
+.undo {
+  color: white;
+  bottom: 0px;
+  left: 0;
+  padding: 20px 15px;
+  background: #232A31;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;  
+}
+
+.slide-out {
+  transition        : .4s linear;
+  transform : translate(0px, 1000px);
+}
+
+.hide {
+  display: none;
+}
+
+@keyframes slideOut {
+  100% {
+    top: 1000px;
+  }
 }

@@ -39,7 +39,7 @@ body {
 
   .instructions {
     color: white;
-    margin-top: 115px;
+    margin-top: 90px;
 
     /*.swipe-left-right {
       i:nth-child(1) {
@@ -101,17 +101,17 @@ input {
 .viewport .stack {
     /*width: 200px; height: 300px; background: #ED5D52; position: absolute; top: 100px; left: 50%; margin-left: -100px; border-radius: 10px;*/
     /*width: 320px; height: 200px; background: #ED5D52; position: absolute; top: 200px; left: 50%; margin-left: -160px; border-radius: 10px;*/
-    width: 100%; height: 125px; position: absolute; top: 180px; border-radius: 10px;
+    width: 100%; height: 125px; position: absolute; top: 130px; border-radius: 10px;
 }
 
 .viewport li {
     /*width: 200px; height: 300px; list-style: none; background: #fff; border-radius: 5px; position: absolute; top: 0; left: 0; box-shadow: 0 0 2px rgba(0,0,0,.2), 1px 1px 1px rgba(0,0,0,.2); line-height: 300px; text-align: center; font-size: 100px; border: 10px solid #ECECEC; box-sizing: border-box; cursor: default;*/
     width: 100%; height: auto; list-style: none; background: #fff; border-radius: 5px; position: absolute; top: 0; left: 0; box-shadow: 0 0 2px rgba(0,0,0,.2), 1px 1px 1px rgba(0,0,0,.2); text-align: center; font-size: 100px; border: 10px solid #ECECEC; box-sizing: border-box; cursor: default;
-
-}
+    z-index: 1000;
+} 
 
 li {
-  div {
+  .odk {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -119,7 +119,66 @@ li {
     color: black;
     font-size: 40px;
     line-height: 500%;
-    background: white;
+    background: #ECECEC;
+  }
+  
+  .tag {
+    position: absolute;
+    opacity: 1;
+    color: black;
+    font-size: 40px;
+    background: #ECECEC;
+    z-index: 10000;
+    line-height: 120%;
+    font-size: .2em;
+  }
+
+  .vert-tabs {
+    width: 50px;
+    height: 25px;
+  }
+
+  .horz-tabs {
+    width: 25px;
+    height: 50px;
+    line-height: 250%;
+  }
+
+  .up {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 90px 90px;
+    color: #BDBDBD;
+  }
+
+  .down {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 90px 90px 0 0;
+    line-height: 150%;
+    color: #42BE39;
+  }
+
+  .left {
+    top: 50%;
+    transform: translateY(-50%);
+    letter-spacing: 3px;
+    border-radius: 0 90px 90px 0;
+    color: #DF4953;
+  }
+
+  .right {
+    top: 50%;
+    right: 0px;
+    letter-spacing: -4px;
+    transform: translateY(-50%);
+    border-radius: 90px 0 0 90px;
+    color: #3985BE;
   }
 }
 
@@ -230,4 +289,20 @@ img {
 
 .page-content {
   padding-bottom: 0px !important;
+}
+
+.undo {
+  width: 96%;
+  position: absolute;
+  color: white;
+ bottom: 10px;
+ left: 0;
+ padding: 15px;
+ border: 1px solid white;
+ background: #232A31;
+  margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    border-radius: 5px;
 }
