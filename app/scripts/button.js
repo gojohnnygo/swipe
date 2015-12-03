@@ -31,37 +31,50 @@ $( document ).ready(function() {
 
     var correct = 0;
     var incorrect = 0;
+    var last = "";
 
     var cards = $(".stack li");
     var count = 9;
 
     $(".offense").bind("mouseup touchend", function(e) {
-        console.log('click offense: ' + count + " length: " + $(".stack li").get().length);
         $(".stack li").get(count).dataset.odk === 'o' ? correct++ : incorrect++;
+        last = $(".stack li").get(count).dataset.odk === 'o' ? "correct" : "incorrect";
         animate();
         getNewStack();
     })
 
     $(".defense").bind("mouseup touchend", function(e) {
-        console.log('click defnese: ' + count + " length: " + $(".stack li").get().length);
-        if (count == 9) console.log($(".stack li").get(count))
         $(".stack li").get(count).dataset.odk === 'd' ? correct++ : incorrect++;
+        last = $(".stack li").get(count).dataset.odk === 'd' ? "correct" : "incorrect";
         animate();
         getNewStack();
     })
 
     $(".kicking").bind("mouseup touchend", function(e) {
-        console.log('click kicking: ' + count + " length: " + $(".stack li").get().length);
         $(".stack li").get(count).dataset.odk === 'k' ? correct++ : incorrect++;  
+        last = $(".stack li").get(count).dataset.odk === 'k' ? "correct" : "incorrect";
         animate();
         getNewStack();
     })
 
     $(".score").bind("mouseup touchend", function(e) {
-        console.log('click score: ' + count + " length: " + $(".stack li").get().length);
         $(".stack li").get(count).dataset.odk === 's' ? correct++ : incorrect++;  
+        last = $(".stack li").get(count).dataset.odk === 's' ? "correct" : "incorrect";
         animate();
         getNewStack();
+    })
+
+    $(".undo").bind("mouseup touchend", function(e) {
+        
+        if ((correct + incorrect) > 0) {
+            last === "correct" ? correct-- : incorrect--;
+            count++
+        }
+        
+        var length = $(".stack li").length;
+        
+        $(".stack li:nth-child(" + (length - (correct + incorrect)) + ")").removeClass('hide');
+
     })
 
     var animate = function() {
