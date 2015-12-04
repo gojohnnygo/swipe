@@ -31,35 +31,35 @@ $( document ).ready(function() {
 
     var correct = 0;
     var incorrect = 0;
-    var last = "";
+    var last = [];
 
     var cards = $(".stack li");
     var count = 9;
 
     $(".offense").bind("mouseup touchend", function(e) {
         $(".stack li").get(count).dataset.odk === 'o' ? correct++ : incorrect++;
-        last = $(".stack li").get(count).dataset.odk === 'o' ? "correct" : "incorrect";
+        last.push($(".stack li").get(count).dataset.odk === 'o' ? "correct" : "incorrect");
         animate();
         getNewStack();
     })
 
     $(".defense").bind("mouseup touchend", function(e) {
         $(".stack li").get(count).dataset.odk === 'd' ? correct++ : incorrect++;
-        last = $(".stack li").get(count).dataset.odk === 'd' ? "correct" : "incorrect";
+        last.push($(".stack li").get(count).dataset.odk === 'd' ? "correct" : "incorrect");
         animate();
         getNewStack();
     })
 
     $(".kicking").bind("mouseup touchend", function(e) {
         $(".stack li").get(count).dataset.odk === 'k' ? correct++ : incorrect++;  
-        last = $(".stack li").get(count).dataset.odk === 'k' ? "correct" : "incorrect";
+        last.push($(".stack li").get(count).dataset.odk === 'k' ? "correct" : "incorrect");
         animate();
         getNewStack();
     })
 
     $(".score").bind("mouseup touchend", function(e) {
         $(".stack li").get(count).dataset.odk === 's' ? correct++ : incorrect++;  
-        last = $(".stack li").get(count).dataset.odk === 's' ? "correct" : "incorrect";
+        last.push($(".stack li").get(count).dataset.odk === 's' ? "correct" : "incorrect");
         animate();
         getNewStack();
     })
@@ -67,7 +67,7 @@ $( document ).ready(function() {
     $(".undo").bind("mouseup touchend", function(e) {
         
         if ((correct + incorrect) > 0) {
-            last === "correct" ? correct-- : incorrect--;
+            last.pop() === "correct" ? correct-- : incorrect--;
             count++
         }
         
